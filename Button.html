@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src='http://repo.zebkit.org/latest/zebra.min.js'
+                type='text/javascript'>
+		</script>
+        <script type='text/javascript'>
+            zebra.ready(function() {
+                // import classes and variables from "ui" and "layout" packages in local space
+                eval(zebra.Import("ui", "layout"));
+                // create Canvas
+                var root = (new zCanvas()).root;
+                root.setLayout(new BorderLayout());
+                root.add(RIGHT, new Button("Right"));
+				root.add(LEFT, new Button("Left"));
+				root.add(CENTER, new Button("Center"));
+				
+				var root = (new zCanvas()).root;
+                root.setLayout(new BorderLayout());
+                root.add(RIGHT, new Button("Right"));
+				root.add(LEFT, new Button("Left"));
+				root.add(CENTER, new Button("Center"));
+            });
+        </script>
+    </head>
+    <body></body>
+</html>
