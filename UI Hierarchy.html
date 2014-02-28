@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src='http://repo.zebkit.org/latest/zebra.min.js'
+                type='text/javascript'>
+		</script>
+        <script type='text/javascript'>
+			zebra.ready(function(){
+			// build Zebra canvas component that adds new
+			// Canvas DOM element into page with the given size
+			var zCanvas = new zebra.ui.zCanvas(800,600);
+			var root    = zCanvas.root; // save reference to root UI component
+
+			var firstPanel = new zebra.ui.Panel();
+			firstPanel.setBounds(10,10, zCanvas.width, zCanvas.height/2); 
+			firstPanel.setBackground("green");
+			root.add(firstPanel);                 
+				var firstLabel = new zebra.ui.Label("First Panel"); 
+				firstLabel.setBounds(360, 10, 360, 50); 
+				firstPanel.add(firstLabel);     
+				var first = new zebra.ui.Button("First Button"); 
+				first.setBounds(160, 60, 460, 50); 
+				firstPanel.add(first);
+				
+				var secondPanel = new zebra.ui.Panel();
+				secondPanel.setBounds(10, 120, zCanvas.width-30, 150);
+				secondPanel.setBackground("blue");     
+				firstPanel.add(secondPanel);    
+					var secondLabel = new zebra.ui.Label("Second Panel"); 
+					secondLabel.setBounds(150, 10, 10, 50); 
+					secondPanel.add(secondLabel);        
+					var second = new zebra.ui.Button("Second Button"); 			second.setBounds(150, 40, 460, 50); 
+					secondPanel.add(second);  
+					var secondTextField = new zebra.ui.TextField("This text field is a child of the second panel"); 
+					secondTextField.setBounds(150, 100, 400, 50);
+					secondPanel.add(secondTextField);
+				
+			var thirdPanel = new zebra.ui.Panel();
+			thirdPanel.setBounds(10, 320, zCanvas.width, zCanvas.height);
+			thirdPanel.setBackground("red");     
+			root.add(thirdPanel);    
+				var thirdButton = new zebra.ui.Button("Second Button"); 			thirdButton.setBounds(160, 120, 460, 50);
+				thirdPanel.add(thirdButton);  
+				var thirdLabel = new zebra.ui.Label("Third Panel"); 
+				thirdLabel.setBounds(360, 10, 360, 50); 
+				thirdPanel.add(thirdLabel);        
+				var thirdTextField = new zebra.ui.TextField("This text field is a child of the third panel"); 
+				thirdTextField.setBounds(10, 10, 400, 30);
+				thirdPanel.add(thirdTextField);					
+			});
+        </script>
+    </head>
+    <body></body>
+</html>
